@@ -1,6 +1,6 @@
 # DP-LFlow
 
-This code repo corresponds to the paper "DP-LFlow: Differentially Private Latent Flow for Scalable Sensitive Image Generationg" in TMLR.
+This code repo corresponds to the paper [DP-LFlow: Differentially Private Latent Flow for Scalable Sensitive Image Generationg](https://openreview.net/pdf?id=GEcneTl9Mk) in TMLR.
 
 This repo is originally developed using Python 3.6 (but I believe it should also be compatible with higher versions of Python).
 
