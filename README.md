@@ -6,7 +6,7 @@ This repo is originally developed using Python 3.6 (but I believe it should also
 
 ## Preparation
 ### 1. Pyvacy
-Pyvacy (https://github.com/ChrisWaites/pyvacy, under Apache-2.0 license) is a PyTorch version of an older version of Tensorflow Privacy (https://github.com/tensorflow/privacy). 
+[Pyvacy](https://github.com/ChrisWaites/pyvacy) (under Apache-2.0 license) is a PyTorch version of an older version of [Tensorflow Privacy](https://github.com/tensorflow/privacy). 
 ```
 # compute privacy parameters
 from pyvacy.analysis import epsilon
@@ -16,9 +16,9 @@ epsilon(10, 1, 8.5 , 300) # => epsilon=1  (subsampling rate=1/10, noise level=8.
 ```
 
 ### 2. CelebA and CelebA-HQ dataset
-Torchvision cannot download CelebA (https://mmlab.ie.cuhk.edu.hk/projects/CelebA.html) automatically. You need to manually download this dataset, then specify its path in datasets.py (line 48). You can start with MNIST and FMNIST for convenience.
+Torchvision cannot download [CelebA](https://mmlab.ie.cuhk.edu.hk/projects/CelebA.html) automatically. You need to manually download this dataset, then specify its path in datasets.py (line 48). You can start with MNIST and FMNIST for convenience.
 
-Similar for CelebA-HQ. Please follow https://github.com/ndb796/CelebA-HQ-Face-Identity-and-Attributes-Recognition-PyTorch/blob/main/Face_Gender_Classification_Test_with_CelebA_HQ.ipynb to download this dataset (arranged by the gender), then specify its path in datasets.py (line 80).
+Similar for CelebA-HQ. Please follow [this link](https://github.com/ndb796/CelebA-HQ-Face-Identity-and-Attributes-Recognition-PyTorch/blob/main/Face_Gender_Classification_Test_with_CelebA_HQ.ipynb) to download this dataset (arranged by the gender), then specify its path in datasets.py (line 80).
 
 
 ### 3. Install necessary packages
