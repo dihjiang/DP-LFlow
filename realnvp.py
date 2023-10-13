@@ -37,17 +37,10 @@ class LinearBatchNorm(nn.Module):
             mean = self.running_mean
             var = self.running_var
 
-        ## size no problem
-        # print(x.size())
-        # print(self.batch_mean.size(), self.batch_var.size())
-
         x_hat = (x - mean) / torch.sqrt(var + self.eps)
         y = self.log_gamma.exp() * x_hat + self.beta
 
         log_det = self.log_gamma - 0.5 * torch.log(var + self.eps)
-
-        ## when batch_size=1, the following numbers are nan, BECAUSE x.var(0) = nan
-        #print('BNLayer:', torch.sum(torch.isnan(y)), torch.sum(torch.isnan(log_det.expand_as(x).sum(1))))
 
         return y, log_det.expand_as(x).sum(1)
 
@@ -141,8 +134,6 @@ class LinearCouplingLayer(nn.Module):
         x = mu + (1 - self.mask) * (u * s.exp() + t)
 
         log_abs_det_jacobian = (1 - self.mask) * s
-
-        # print('CouplingLayer:', torch.sum(torch.isnan(x)), torch.sum(torch.isnan(log_abs_det_jacobian.sum(1))))
 
         return x, log_abs_det_jacobian.sum(1)
 
